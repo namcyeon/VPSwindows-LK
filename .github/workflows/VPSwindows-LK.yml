@@ -19,7 +19,7 @@ jobs:
            $global:progressPreference = 'silentlyContinue'
            Invoke-WebRequest https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile ngrok.zip
            Expand-Archive ngrok.zip
-           .\ngrok\ngrok.exe authtoken $Env:NGROK_AUTH_TOKEN
+           .\ngrok\ngrok.exe authtoken ${NGROK_AUTH_TOKEN}
       env:
         NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
         
